@@ -1,14 +1,26 @@
 cff-version: 1.2.0
-message: Please cite this research archive when using its paper or replay.
-title: A finite counterexample to positive association for constant-freezing percolation
+message: "Cite this version of the research release."
+title: "A finite counterexample to positive association for constant-freezing percolation"
 authors:
-  - name: DannyExperiments
+  - name: "DannyExperiments"
 type: software
-repository-code: https://github.com/DannyExperiments/constant-freezing-percolation-counterexample
-abstract: An analytic counterexample on K4 to Mottram's positive-association question and an exact sign certificate for the specified events.
+version: "1.0.0"
+date-released: 2026-11-27
+repository-code: "https://github.com/DannyExperiments/constant-freezing-percolation-counterexample"
 keywords:
-  - probability
-  - percolation
-  - positive association
-  - constant freezing
-  - Open Problems Catalog Q277
+  - "probability"
+  - "percolation"
+  - "positive association"
+  - "constant freezing"
+doi: "10.5281/zenodo.24567309"
+url: "https://doi.org/10.5281/zenodo.24567309"
+preferred-citation:
+  type: software
+  title: "A finite counterexample to positive association for constant-freezing percolation"
+  authors:
+    - name: "DannyExperiments"
+  version: "1.0.0"
+  date-released: 2026-11-27
+  doi: "10.5281/zenodo.24567309"
+  url: "https://doi.org/10.5281/zenodo.24567309"
+  repository-code: "https://github.com/DannyExperiments/constant-freezing-percolation-counterexample"

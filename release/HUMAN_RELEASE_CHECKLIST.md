@@ -1,9 +1,13 @@
-# Human release checklist
+# Release approval
 
-- [x] Exact question checked against a primary source.
-- [x] Analytic proof and exact identity certificate independently reviewed internally.
-- [x] Exact arithmetic replay and local offline manuscript build passed.
-- [ ] Check the intended release commit’s GitHub workflows.
-- [ ] Approve the citation, rights notice and public artifacts.
-- [ ] Obtain the owner’s explicit authorization for public publication and DOI archiving.
-- [ ] If authorized, verify the public release, assets and archive and record their permanent identifiers.
+On 27 November 2026 DannyExperiments approved public GitHub release and DOI archiving of this reviewed version.
+
+| Item | Record |
+|---|---|
+| Version | [v1.0.0](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/releases/tag/v1.0.0) |
+| Mathematical content | The paper and replay match [the reviewed commit](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/commit/700592fafefc6311bf17d56bab4eac8ca7d60fa2) byte for byte. |
+| Verification | Repository integrity, replay and PDF build passed on the reviewed commit. The README links the workflow records. |
+| Attribution | DannyExperiments is the citation identity. The manuscript has no byline. See [AI disclosure](../AI_DISCLOSURE.md). |
+| Rights | The release is publicly downloadable. All rights reserved as stated in [LICENSE_STATUS.md](../LICENSE_STATUS.md). |
+| Scholarly status | Internally reviewed. External peer review and formal verification have not been conducted. |
+| Version DOI | [10.5281/zenodo.24567309](https://doi.org/10.5281/zenodo.24567309) |

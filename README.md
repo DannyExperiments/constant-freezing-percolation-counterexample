@@ -1,6 +1,7 @@
 # A finite counterexample to positive association for constant-freezing percolation
 
-[![Repository verification](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/verify.yml) [![PDF build](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/pdf.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/pdf.yml) [![Replay verification](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/replay.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/replay.yml)
+[![Repository verification](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/verify.yml) [![Replay verification](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/replay.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/replay.yml) [![PDF build](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/pdf.yml/badge.svg?branch=main)](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/actions/workflows/pdf.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24567309.svg)](https://doi.org/10.5281/zenodo.24567309)
 
 Mottram asked whether the final open-edge law of percolation with constant freezing is positively associated. On $K_4$, let $A$ be the event that a fixed perfect matching has an open edge and let $B$ be the event that its complement has an open edge. Both events are increasing. Their covariance is strictly negative for every $0<\alpha\leq 1/1000$.
 
@@ -22,4 +23,6 @@ The elementary proof starts from three histories of the four labeled vertices. A
 - [Scope and limitations](CLAIM_SCOPE_AND_LIMITATIONS.md)
 - [Provenance](PROVENANCE.md) and [AI credits](AI_DISCLOSURE.md)
 
-Internal mathematical review is complete. See [candidate status](STATUS.md) for release and verification status.
+Internal mathematical review is complete. See the [release and verification status](STATUS.md).
+
+[Release v1.0.0](https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/releases/tag/v1.0.0) · [Version DOI](https://doi.org/10.5281/zenodo.24567309)

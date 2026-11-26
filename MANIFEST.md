@@ -1,12 +1,11 @@
-# Candidate manifest
-
-`SHA256SUMS.txt` covers the files below. The checksum ledger itself is excluded from its own digest list.
+# Release manifest
 
 - `.gitattributes`
 - `.github/workflows/pdf.yml`
 - `.github/workflows/replay.yml`
 - `.github/workflows/verify.yml`
 - `.gitignore`
+- `.zenodo.json`
 - `AI_DISCLOSURE.md`
 - `CITATION.cff`
 - `CLAIMS_EVIDENCE_MATRIX.md`

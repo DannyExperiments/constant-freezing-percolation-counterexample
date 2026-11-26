@@ -1,0 +1,28 @@
+{
+  "title": "A finite counterexample to positive association for constant-freezing percolation",
+  "upload_type": "software",
+  "publication_date": "2026-11-27",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "name": "DannyExperiments"
+    }
+  ],
+  "description": "<p>In finite bond percolation with constant freezing on K4, the increasing event of an open edge in a fixed perfect matching and the increasing event of an open edge outside the matching have strictly negative covariance for every rate 0 &lt; α ≤ 1/1000. An exact finite-state certificate gives the covariance sign for that pair at every positive rate, with a unique crossing between 0.0407722920 and 0.0407722921.</p><p>The three-history proof answers Mottram’s finite positive-association question. The all-rate threshold concerns only the specified event pair. Mottram’s earlier four-vertex path fails the stronger FKG lattice condition and has positive association.</p><p>Includes the manuscript, LaTeX and bibliography, proof guides, audit summaries, exact replay, and interactive illustration. Internally reviewed. External peer review is pending.</p><p>Under human direction, ChatGPT Astra 6.2 (OpenAI) generated the discovery argument. Claude Opus 5.5 (Anthropic) assisted with earlier audits and manuscript preparation. OpenAI Codex checked the proof, prepared the exact certificate, and revised the paper. GPT-6.2 Sol (OpenAI) checked the literature and prepared the reproducibility package and illustrations. DannyExperiments is the project citation identity.</p>",
+  "keywords": [
+    "probability",
+    "percolation",
+    "positive association",
+    "constant freezing"
+  ],
+  "access_right": "open",
+  "license": "other-closed",
+  "notes": "All rights reserved. Publicly downloadable files are supplied without a repository-wide reuse license.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/DannyExperiments/constant-freezing-percolation-counterexample/releases/tag/v1.0.0",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}
