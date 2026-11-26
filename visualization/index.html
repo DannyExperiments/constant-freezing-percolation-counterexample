@@ -102,11 +102,15 @@ function draw(s) {
   canvas.width = Math.round(box.width * dpr); canvas.height = Math.round(box.height * dpr);
   const c = canvas.getContext("2d"), w = box.width, h = box.height;
   c.scale(dpr, dpr);
-  const a = Number(el("angle").value) * Math.PI / 180, e = .43, scale = Math.min(w, h) * .27;
+  const a = Number(el("angle").value) * Math.PI / 180, e = .43, distance = 5.2;
+  // The vertices lie on a sphere of radius √3. This is the maximum of
+  // distance * √(3 − depth²) / (distance − depth), before the canvas scale.
+  const projectedRadius = distance * Math.sqrt(3 / (distance * distance - 3));
+  const scale = Math.max(0, Math.min(w, h)/2 - 15) / projectedRadius;
   const p = vertices.map(([x, y, z]) => {
     const x1 = Math.cos(a)*x + Math.sin(a)*z, z1 = Math.cos(a)*z - Math.sin(a)*x;
     const y1 = Math.cos(e)*y - Math.sin(e)*z1, depth = Math.sin(e)*y + Math.cos(e)*z1;
-    const lens = 5.2 / (5.2 - depth);
+    const lens = distance / (distance - depth);
     return [w/2 + x1 * lens * scale, h/2 - y1 * lens * scale, depth];
   });
   const order = (a,b) => a[0] - b[0];
@@ -133,10 +137,10 @@ function refresh() {
   el("status").textContent = `Jump ${step} of ${h.steps.length}`;
   el("stepTitle").textContent = jump ? jump.label : "Start";
   el("stepText").textContent = jump ? jump.why : h.start;
-  const [priorJ, priorK] = counts(state(Math.max(0, step - 1)));
+  const [priorJ, priorK] = jump ? counts(state(step - 1)) : [j,k];
   const factor = jump?.op === "freeze" ? `${jump.choices === 1 ? "" : jump.choices}α` : jump?.choices;
   el("rate").textContent = jump ? `Jump factor  ${factor} / (${priorJ} + ${priorK}α)` : "";
-  el("counts").textContent = `${j} eligible edges · ${k} warm components`;
+  el("counts").textContent = `${j} eligible edge${j === 1 ? "" : "s"} · ${k} warm component${k === 1 ? "" : "s"}`;
   el("result").textContent = step === h.steps.length ? h.result : "";
   el("previous").disabled = !step; el("reset").disabled = !step; el("next").disabled = step === h.steps.length;
   draw(s);
