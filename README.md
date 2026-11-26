@@ -11,7 +11,7 @@ Mottram asked whether the final open-edge law of percolation with constant freez
 
 ![A rotating tetrahedron shows three constant-freezing histories. The empty outcome needs three freezes. Each of the two edge classes can be missed after one freeze.](visualization/freezing-histories.gif)
 
-[Download the offline explorer](visualization/freezing-histories-explorer.zip?raw=1), extract it, and open `index.html` in a browser. Rotate the tetrahedron and step through each history to see its exact jump factors.
+[Download the offline explorer](https://raw.githubusercontent.com/DannyExperiments/constant-freezing-percolation-counterexample/3677d24af75d4f415dbb2e8763aa8df347de4c90/visualization/freezing-histories-explorer.zip), extract it, and open `index.html` in a browser. Rotate the tetrahedron and step through each history to see its exact jump factors.
 
 The elementary proof starts from three histories of the four labeled vertices. A separate exact certificate gives the sign for these two events at every positive rate. The covariance crosses zero at a unique rate between 0.0407722920 and 0.0407722921. The crossing only concerns these two events.
 
