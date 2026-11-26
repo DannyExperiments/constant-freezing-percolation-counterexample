@@ -1,0 +1,4 @@
+Rational identity: 63 distinct exact values, cleared degree at most 62.
+The unique positive root is between 0.0407722920 and 0.0407722921.
+K4 at alpha = 1/1000: exact covariance = -1352207560713646124743251512998000000/37991657430549528728311870188753723129555003.
+P4 at alpha = 1: eight masses agree with the thesis; lattice defect = -1/525.

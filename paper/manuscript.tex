@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[left=.84in,right=.84in,top=.78in,bottom=.78in]{geometry}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+\linespread{.95}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathSizes{8}{8}{8}{8}
+\DeclareMathSizes{9}{9}{8}{8}
+\DeclareMathSizes{10.95}{10.95}{8}{8}
+\title[Positive association in constant-freezing percolation]{A finite counterexample to positive association for constant-freezing percolation}
+\date{}
+\begin{document}
+\begin{abstract}
+Mottram asked whether the final law of percolation with constant freezing is positively associated. On the complete graph on four vertices, the event that some edge of a fixed perfect matching opens and the event that some complementary edge opens have negative covariance for every freezing rate \(0<\alpha\leq 1/1000\). An elementary proof compares the probabilities of three jump histories. A separate exact finite-state certificate determines the sign at every positive rate for this pair of events.
+\end{abstract}
+\maketitle
+
+\section{The question and the counterexample}
+In finite bond percolation with constant freezing, all vertices begin warm and all edges closed. A closed edge whose endpoints are warm opens at rate \(1\). Each warm connected component of the open-edge graph, including a singleton, freezes at rate \(\alpha>0\). Its vertices remain frozen, and unopened incident edges remain closed forever. Open edges are retained. Let \(\mu_{G,\alpha}\) be the law of the final open-edge set on a finite graph \(G\) \cite[Definition 3.2.1]{mottram-thesis}. Mottram also credits Ben-Naim and Krapivsky's mean-field model \cite{mottram-paper,bennaim-krapivsky}. An event is increasing if it is closed under adding open edges.
+
+Mottram asked whether \(\mu_{G,\alpha}(A\cap B)\geq \mu_{G,\alpha}(A)\mu_{G,\alpha}(B)\) for increasing events \(A,B\) \cite[\S3.1.4]{mottram-thesis}. Example 3.1.5 of his dissertation shows that the four-vertex path fails the FKG lattice condition at every positive rate, while its final law is positively associated. The catalog entry \cite{catalog} also records positive association for graphs whose connected components have at most four edges. The example below has six edges and violates positive association itself.
+
+\begin{theorem}\label{counterexample}
+On \(K_4\) with vertex labels \(0,1,2,3\), put \(M=\{01,23\}\) and \(C=E(K_4)\setminus M\). Let \(A\) be the event that an edge of \(M\) opens and \(B\) the event that an edge of \(C\) opens. Then
+\(\Cov_{\mu_{K_4,\alpha}}(\mathbf{1}_A,\mathbf{1}_B)<0\)
+for every \(0<\alpha\leq 1/1000\).
+\end{theorem}
+
+\begin{proof}
+Both events are increasing. Write \(p_M,p_C\) for the probabilities of missing all edges in \(M,C\), respectively, and \(p_0\) for the probability of no opening. Complementing both indicators leaves their covariance unchanged, so it is \(p_0-p_Mp_C\).
+
+In a state with \(j\) eligible edges and \(k\) warm components, the total rate is \(j+k\alpha\). By competition of exponential clocks the probability of a specified next jump is its rate divided by this sum. The edge configuration is settled once there are no eligible edges.
+
+\emph{No openings.} The first three relevant jumps must freeze singletons. At those stages the numbers of warm vertices are \(4,3,2\). After the third freeze, an opening is impossible. Thus
+\[
+p_0=\frac{4\alpha}{6+4\alpha}\frac{3\alpha}{3+3\alpha}
+       \frac{2\alpha}{1+2\alpha}
+    =\frac{4\alpha^3}{(1+\alpha)(1+2\alpha)(3+2\alpha)}.
+\]
+\emph{Missing the matching.} First open any one of the four edges in \(C\), then freeze its newly joined pair before the next opening. After the first jump there are five eligible edges and three warm components. The frozen pair meets both matching edges, which stay closed. Hence
+\[
+p_M\ \geq\ \frac{4}{6+4\alpha}\frac{\alpha}{5+3\alpha}.
+\]
+\emph{Missing the complementary edges.} Open the two matching edges first, in either order, and then freeze either of the two resulting pairs. After the two openings there are four eligible edges and two warm components. All four edges in \(C\) run between the pairs, so freezing either pair disables them. Hence
+\[
+p_C\ \geq\ \frac{2}{6+4\alpha}\frac{1}{5+3\alpha}
+                 \frac{2\alpha}{4+2\alpha}.
+\]
+If \(0<\alpha\leq 1/1000\), the first formula gives \(p_0<4\alpha^3/3\leq\alpha^2/750\). The other denominators are strictly smaller than \(7,6,5\), respectively, so \(p_Mp_C>4\alpha^2/2205>\alpha^2/750\). The covariance is strictly negative.
+\end{proof}
+
+\section{The sign at every rate for these two events}
+\begin{proposition}\label{threshold}
+For the events in Theorem~\ref{counterexample}, put \(x=\alpha\). The covariance is
+\[
+\frac{x^2P(x)}{9(1+2x)^2(1+x)^5(3+2x)^2(2+x)^3(5+3x)^2},
+\]
+where the coefficients of \(P\), in ascending degree, are
+\[
+\begin{split}
+(&-594,\ 9744,\ 101962,\ 371058,\ 712884,\ 820280,\\
+ &593838,\ 272838,\ 77334,\ 12384,\ 864).
+\end{split}
+\]
+It is negative below the unique positive root \(r\) of \(P\), zero at \(r\), and positive above \(r\). The root lies in
+\(0.0407722920<r<0.0407722921\).
+\end{proposition}
+
+\begin{proof}
+The certificate uses exact forward probability flow. Start with mass one at the empty open-edge set and the full warm set. At each state, send its mass times \(1/(j+kx)\) to each eligible-edge opening and mass times \(x/(j+kx)\) to each warm-component freeze. When \(j=0\), collect the mass under the current open-edge set. Sum this terminal law to obtain \(p_0,p_M,p_C\). All these operations are finite since each transition opens a new edge or freezes at least one new vertex.
+
+On \(K_4\), each jump before \(j=0\) strictly decreases \(j\). Opening an edge removes it from the eligible set. If a freezing component is all of the warm set, the jump removes every eligible edge. Otherwise every edge from that component to a warm vertex in another component is eligible, and at least one such edge exists. Thus along any history contributing to a terminal mass, each positive \(j\) occurs at most once and \(1\leq k\leq 4\).
+
+Consequently the product \(D(x)=\prod_{j=1}^6\prod_{k=1}^4(j+kx)\), of degree \(24\), clears all event denominators. In a given history the numerator has degree at most its number of jumps, so after multiplying by \(D\) the degree is at most \(24\). Hence \(D(x)^2(p_0-p_Mp_C)\) has degree at most \(48\). The denominator in the displayed formula of the proposition has degree \(14\), and \(x^2P(x)\) has degree \(12\). The cross-multiplied difference therefore has degree at most \(62\).
+
+The accompanying standard-library replay computes the covariance by forward flow at the \(63\) distinct rational rates \(i/1000\), \(1\leq i\leq 63\), and checks equality with the displayed formula. All denominators are positive there, so the degree bound makes this an exact identity certificate. The program also evaluates \(P\) at the two rational endpoints of the root bracket. The values have opposite signs. Every nonconstant coefficient of \(P\) is positive, and \(P(0)<0\), so the positive root is unique and gives the stated sign change.
+\end{proof}
+
+The threshold concerns the specified events. A positive covariance for these events leaves the association of the whole final law at that rate undetermined. Theorem~\ref{counterexample} is analytic and independent of the certificate. As a model check, the program also reproduces the eight final probabilities of the four-vertex path at \(\alpha=1\) and the lattice defect \(-1/525\) from Example 3.1.5.
+
+\section*{Disclosures}
+The work used AI assistance under human direction. ChatGPT Astra 6.2 (OpenAI) generated the discovery argument. Claude Opus 5.5 (Anthropic) assisted with earlier audits and manuscript preparation. OpenAI Codex checked the proof, prepared the exact certificate and revised the paper. GPT-6.2 Sol (OpenAI) checked the literature and prepared the reproducibility package and illustrations. This work has undergone internal mathematical review. It has no formal verification or external peer review.
+
+\renewcommand{\bibliofont}{\normalsize}
+\bibliographystyle{amsplain}
+\bibliography{references}
+\end{document}
